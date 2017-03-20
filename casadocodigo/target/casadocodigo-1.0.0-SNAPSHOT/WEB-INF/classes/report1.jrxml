@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c8f68822-8c00-436a-b856-24b20e7ed2ac">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cabecalho" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     pessoa.`id_pessoa` AS pessoa_id_pessoa,
+     pessoa.`registro` AS pessoa_registro,
+     pessoa.`name` AS pessoa_name,
+     pessoa.`senha` AS pessoa_senha
+FROM
+     `pessoa` pessoa]]>
+	</queryString>
+	<field name="id_pessoa" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="registro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="senha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pessoa_id_pessoa" class="java.lang.Long"/>
+	<field name="pessoa_registro" class="java.lang.String"/>
+	<field name="pessoa_name" class="java.lang.String"/>
+	<field name="pessoa_senha" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<subreport>
+				<reportElement x="5" y="5" width="551" height="47" isPrintWhenDetailOverflows="true" uuid="8551b49a-be78-451d-9d8c-b15475d19a61"/>
+				<subreportExpression><![CDATA[$P{cabecalho}]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="4" width="100" height="20" uuid="9abe4c60-adcd-44a9-9cf2-7af7e8a1603e"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="24" width="551" height="1" uuid="56e53b17-16e5-4ecd-9b9c-05beaff1ba87"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="3" width="100" height="20" uuid="ca565cf2-8ed0-4400-a390-f4e44a9a657a"/>
+				<textFieldExpression><![CDATA[$F{pessoa_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="00d9f3e5-ff0e-4434-89f2-5ad409ee94d9"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
