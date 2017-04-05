@@ -52,7 +52,7 @@ import br.com.casadocodigo.loja.validation.ProductValidator;
 @Controller
 @Transactional
 @ControllerAdvice
-@RequestMapping("/produtos")
+@RequestMapping("/products")
 public class ProductsController {
 	
 	
@@ -89,13 +89,13 @@ public class ProductsController {
 	}
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@RequestParam(value="coisa") String coisa,@Valid @ModelAttribute("product")Product product,BindingResult bindingResult,
+	public String save(@Valid @ModelAttribute("product")Product product,BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()){
-			return "/form";
+			return "products/form";
 		}
 		productDAO.save(product);
-		return "redirect:/produtos/list";
+		return "redirect:/products/list";
 	}
 	
 	@RequestMapping(value = "/helloReport1", method = RequestMethod.GET)

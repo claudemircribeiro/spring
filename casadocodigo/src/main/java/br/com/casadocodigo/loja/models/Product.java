@@ -24,7 +24,7 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idProduto;
-	@NotBlank
+	@NotBlank(message="Digita a porra do titulo caraio")
 	private String title;
 	@Lob
 	private String description;

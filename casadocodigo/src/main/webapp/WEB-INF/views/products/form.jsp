@@ -28,7 +28,7 @@
             			  url: "helloReport1",
             			  context: document.body
             			}).done(function() {
-            				document.getElementById("form1").action="/casadocodigo/produtos/helloReportAtual";
+            				document.getElementById("form1").action="/casadocodigo/products/helloReportAtual";
             				 $("#carregando").css("display", "none");
             			    document.getElementById("form1").submit();
             			 // alert("feiot");
@@ -102,6 +102,9 @@
 		</c:forEach>
 		<div>
 			<input type="button" value="Teste" onclick="crunchifyAjax()"> 
+		</div>
+		<div>
+			<input type="submit" value="Salvar" > 
 		</div>
 		<script type="text/javascript" src="${produtoJS}"></script>
 	</form:form>
