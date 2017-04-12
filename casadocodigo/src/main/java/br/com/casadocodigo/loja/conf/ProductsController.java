@@ -70,8 +70,20 @@ public class ProductsController {
 	Connection conexao;
 
 	@RequestMapping("/form")
-	public ModelAndView form(/*@PathVariable("userName") String name*/) {
+	public ModelAndView inicio(/*@PathVariable("userName") String name*/) {
 		ModelAndView modelAndView = new ModelAndView("products/form");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/mantemLivros",method=RequestMethod.POST)
+	public ModelAndView mantenLivros(/*@PathVariable("userName") String name*/) {
+		ModelAndView modelAndView = new ModelAndView("products/mantemLivros");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/mantemLivros",method=RequestMethod.GET)
+	public ModelAndView form2(/*@PathVariable("userName") String name*/) {
+		ModelAndView modelAndView = new ModelAndView("products/mantemLivros");
 		return modelAndView;
 	}
 
