@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.casadocodigo</groupId>
 	<artifactId>casadocodigo</artifactId>
-	<version>1.8.12-snapshot</version>
+	<version>1.8.11</version>
 	<packaging>war</packaging>
 	
 	
@@ -26,7 +26,7 @@
 		<url>https://github.com/claudemircribeiro/spring.git</url>
 		<connection>scm:git:https://github.com/claudemircribeiro/spring.git</connection>
 		<developerConnection>scm:git:https://github.com/claudemircribeiro/spring.git</developerConnection>
-	  <tag>1.8.10</tag>
+	  <tag>1.8.11</tag>
   </scm>
   	<developers>
 		<developer>
